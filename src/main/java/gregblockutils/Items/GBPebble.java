@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GBPebble extends Item implements IHasModel {
-    private static final List<String> names = Lists.newArrayList("typeA", "typeB");
+    private static final List<String> names = Lists.newArrayList("basalt", "black_granite", "marble", "red_granite");
 
     public GBPebble() {
         setUnlocalizedName("gbpebble");
