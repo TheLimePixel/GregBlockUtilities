@@ -1,0 +1,16 @@
+item.material.oreprefix.oreChunk=%s Ore Chunk
+item.material.oreprefix.oreNetherChunk=%s Ore Chunk
+item.material.oreprefix.oreEnderChunk=%s Ore Chunk
+item.material.oreprefix.oreFineChunk=Fine %s Ore Chunk
+item.material.oreprefix.oreChunk=Powdered %s Ore
+
+recipemap.electric_sieve.name=Electric Sieve Recipes
+
+gregtech.machine.sieve.lv.name=Basic Electric Sieve
+gregtech.machine.sieve.mv.name=Advanced Electric Sieve
+gregtech.machine.sieve.hv.name=Universal Electric Sieve II
+gregtech.machine.sieve.ev.name=Universal Electric Sieve III
+gregtech.machine.sieve.iv.name=Universal Electric Sieve IV
+gregtech.machine.sieve.luv.name=Universal Electric Sieve V
+gregtech.machine.sieve.zpm.name=Universal Electric Sieve VI
+gregtech.machine.sieve.uv.name=Universal Electric Sieve VII

@@ -1,5 +1,8 @@
 package gregblockutils;
 
+import gregblockutils.Machines.GBTileEntities;
+import gregblockutils.Recipes.GBMachineRecipes;
+import gregblockutils.Recipes.GBRecipeAddition;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -7,6 +10,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
+
+import java.lang.management.GarbageCollectorMXBean;
 
 @Mod(modid = GregBlockUtils.MODID,
         name = GregBlockUtils.NAME,
@@ -36,10 +41,13 @@ public class GregBlockUtils {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        GBTileEntities.init();
+        GBMachineRecipes.init();
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit();
+        GBRecipeAddition.postInit();
     }
 }
