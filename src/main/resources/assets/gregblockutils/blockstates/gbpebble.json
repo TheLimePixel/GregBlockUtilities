@@ -8,12 +8,22 @@
     "type": {
       "typeA": {
         "textures": {
-          "layer0": "exnihilocreatio:items/item_pebble"
+          "layer0": "gregblockutild:items/basalt_pebble"
         }
       },
       "typeB": {
         "textures": {
-          "layer0": "exnihilocreatio:items/item_pebble"
+          "layer0": "gregblockutild:items/black_granite_pebble"
+        }
+      },
+      "typeB": {
+        "textures": {
+          "layer0": "gregblockutild:items/red_granite_pebble"
+        }
+      },
+      "typeB": {
+        "textures": {
+          "layer0": "gregblockutild:items/marble_pebble"
         }
       }
     }
