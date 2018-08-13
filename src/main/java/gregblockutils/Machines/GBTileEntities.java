@@ -8,6 +8,8 @@ import gregtech.api.render.Textures;
 public class GBTileEntities {
     public static SimpleMachineMetaTileEntity[] ELECTRIC_SIEVE = new SimpleMachineMetaTileEntity[8];
 
+    public static SteamPump STEAM_PUMP;
+
     public static void init() {
         ELECTRIC_SIEVE[0] = GregTechAPI.registerMetaTileEntity(2750, new SimpleMachineMetaTileEntity("sieve.lv", GBRecipeMaps.SIEVE_RECIPES, Textures.SIFTER_OVERLAY, 1));
         ELECTRIC_SIEVE[1] = GregTechAPI.registerMetaTileEntity(2751, new SimpleMachineMetaTileEntity("sieve.mv", GBRecipeMaps.SIEVE_RECIPES, Textures.SIFTER_OVERLAY, 2));
@@ -17,5 +19,7 @@ public class GBTileEntities {
         ELECTRIC_SIEVE[5] = GregTechAPI.registerMetaTileEntity(2755, new SimpleMachineMetaTileEntity("sieve.luv", GBRecipeMaps.SIEVE_RECIPES, Textures.SIFTER_OVERLAY, 6));
         ELECTRIC_SIEVE[6] = GregTechAPI.registerMetaTileEntity(2756, new SimpleMachineMetaTileEntity("sieve.zpm", GBRecipeMaps.SIEVE_RECIPES, Textures.SIFTER_OVERLAY, 7));
         ELECTRIC_SIEVE[7] = GregTechAPI.registerMetaTileEntity(2757, new SimpleMachineMetaTileEntity("sieve.uv", GBRecipeMaps.SIEVE_RECIPES, Textures.SIFTER_OVERLAY, 8));
+
+        STEAM_PUMP = GregTechAPI.registerMetaTileEntity(2758, new SteamPump("pump.steam"));
     }
 }
