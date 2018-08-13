@@ -1,0 +1,21 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated",
+    "transform": "forge:default-item"
+  },
+  "variants": {
+    "type": {
+      "typeA": {
+        "textures": {
+          "layer0": "exnihilocreatio:items/item_pebble"
+        }
+      },
+      "typeB": {
+        "textures": {
+          "layer0": "exnihilocreatio:items/item_pebble"
+        }
+      }
+    }
+  }
+}

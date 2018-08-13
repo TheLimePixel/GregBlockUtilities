@@ -1,6 +1,7 @@
 package gregblockutils;
 
 import gregblockutils.Items.Chunks;
+import gregblockutils.Items.GBItems;
 import gregblockutils.Items.GBMetaItems;
 import gregblockutils.Machines.GBTileEntities;
 import gregblockutils.Recipes.GBMachineRecipes;
@@ -39,6 +40,7 @@ public class GregBlockUtils {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         GBMetaItems.preInit();
+        new GBItems();
     }
 
     @EventHandler
