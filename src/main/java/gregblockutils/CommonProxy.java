@@ -14,12 +14,11 @@ import java.util.function.Function;
 @Mod.EventBusSubscriber(modid = GregBlockUtils.MODID)
 public class CommonProxy {
 
-    public void preInit()
-    {
+    public void preInit() {
 
     }
-    public void postInit()
-    {
+
+    public void postInit() {
 
     }
 
@@ -28,6 +27,7 @@ public class CommonProxy {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
     }
+
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();

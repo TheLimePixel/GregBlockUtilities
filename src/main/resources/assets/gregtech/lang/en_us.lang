@@ -14,3 +14,8 @@ gregtech.machine.sieve.iv.name=Universal Electric Sieve IV
 gregtech.machine.sieve.luv.name=Universal Electric Sieve V
 gregtech.machine.sieve.zpm.name=Universal Electric Sieve VI
 gregtech.machine.sieve.uv.name=Universal Electric Sieve VII
+
+item.material.oreprefix.oreChunk=%s Ore Chunk
+item.material.oreprefix.oreEnderChunk=Ender %s Ore Chunk
+item.material.oreprefix.oreNetherChunk=Nether %s Ore Chunk
+item.material.oreprefix.oreFineChunk=Fine %s Ore Chunk

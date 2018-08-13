@@ -12,13 +12,11 @@ public class ClientProxy extends CommonProxy {
         super.preInit();
     }
 
-    public void postInit()
-    {
+    public void postInit() {
 
     }
 
     @SubscribeEvent
-    public static void registerModels(ModelRegistryEvent event)
-    {
+    public static void registerModels(ModelRegistryEvent event) {
     }
 }

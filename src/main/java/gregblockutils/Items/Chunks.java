@@ -17,20 +17,19 @@ public class Chunks {
 
         EnumHelper.addEnum(OrePrefix.class, "oreChunk",
                 new Class[]{String.class, long.class, Material.class, MaterialIconType.class, long.class, Condition.class},
-                "Ore Chunk", GTValues.M, null, MaterialIconType.valueOf("oreChunk"), OrePrefix.Flags.ENABLE_UNIFICATION,
-                OrePrefix.and(), OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE));
+                "Ore Chunk", -1L, null, MaterialIconType.valueOf("oreChunk"), OrePrefix.Flags.ENABLE_UNIFICATION,
+                (Condition)null, OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE));
         EnumHelper.addEnum(OrePrefix.class, "oreEnderChunk",
                 new Class[]{String.class, long.class, Material.class, MaterialIconType.class, long.class, Condition.class},
-                "Ender Ore Chunk", GTValues.M, null, MaterialIconType.valueOf("oreEnderChunk"), OrePrefix.Flags.ENABLE_UNIFICATION,
-                OrePrefix.and(), OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE));
+                "Ender Ore Chunk", -1L, null, MaterialIconType.valueOf("oreEnderChunk"), OrePrefix.Flags.ENABLE_UNIFICATION,
+                (Condition)null, OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE));
         EnumHelper.addEnum(OrePrefix.class, "oreNetherChunk",
                 new Class[]{String.class, long.class, Material.class, MaterialIconType.class, long.class, Condition.class},
-                "Nether Ore Chunk", GTValues.M, null, MaterialIconType.valueOf("oreNetherChunk"), OrePrefix.Flags.ENABLE_UNIFICATION,
-                OrePrefix.and(), OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE));
+                "Nether Ore Chunk", -1L, null, MaterialIconType.valueOf("oreNetherChunk"), OrePrefix.Flags.ENABLE_UNIFICATION,
+                (Condition)null, OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE));
         EnumHelper.addEnum(OrePrefix.class, "oreFineChunk",
                 new Class[]{String.class, long.class, Material.class, MaterialIconType.class, long.class, Condition.class},
-                "Fine Ore Chunk", GTValues.M, null, MaterialIconType.valueOf("oreFineChunk"), OrePrefix.Flags.ENABLE_UNIFICATION,
-                OrePrefix.and(), OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE));
-
+                "Fine Ore Chunk", -1L, null, MaterialIconType.valueOf("oreFineChunk"), OrePrefix.Flags.ENABLE_UNIFICATION,
+                (Condition)null, OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE));
     }
 }
