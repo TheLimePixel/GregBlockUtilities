@@ -18,18 +18,23 @@ public class Chunks {
         EnumHelper.addEnum(OrePrefix.class, "oreChunk",
                 new Class[]{String.class, long.class, Material.class, MaterialIconType.class, long.class, Condition.class},
                 "Ore Chunk", -1L, null, MaterialIconType.valueOf("oreChunk"), OrePrefix.Flags.ENABLE_UNIFICATION | OrePrefix.Flags.DISALLOW_RECYCLING,
-                (Condition)null);
+                OrePrefix.and(instanceOfDustMat(), OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE)));
         EnumHelper.addEnum(OrePrefix.class, "oreEnderChunk",
                 new Class[]{String.class, long.class, Material.class, MaterialIconType.class, long.class, Condition.class},
                 "Ender Ore Chunk", -1L, null, MaterialIconType.valueOf("oreEnderChunk"), OrePrefix.Flags.ENABLE_UNIFICATION | OrePrefix.Flags.DISALLOW_RECYCLING,
-                (Condition)null);
+                OrePrefix.and(instanceOfDustMat(), OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE)));
         EnumHelper.addEnum(OrePrefix.class, "oreNetherChunk",
                 new Class[]{String.class, long.class, Material.class, MaterialIconType.class, long.class, Condition.class},
                 "Nether Ore Chunk", -1L, null, MaterialIconType.valueOf("oreNetherChunk"), OrePrefix.Flags.ENABLE_UNIFICATION | OrePrefix.Flags.DISALLOW_RECYCLING,
-                (Condition)null);
+                OrePrefix.and(instanceOfDustMat(), OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE)));
         EnumHelper.addEnum(OrePrefix.class, "oreFineChunk",
                 new Class[]{String.class, long.class, Material.class, MaterialIconType.class, long.class, Condition.class},
                 "Fine Ore Chunk", -1L, null, MaterialIconType.valueOf("oreFineChunk"), OrePrefix.Flags.ENABLE_UNIFICATION | OrePrefix.Flags.DISALLOW_RECYCLING,
-                (Condition)null);
+                OrePrefix.and(instanceOfDustMat(), OrePrefix.hasFlag(DustMaterial.MatFlags.GENERATE_ORE)));
+    }
+    public static Condition<Material> instanceOfDustMat() {
+        return (mat) -> {
+            return mat instanceof DustMaterial;
+        };
     }
 }
