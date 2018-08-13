@@ -1,7 +1,14 @@
 package gregblockutils.Items;
 
 import gregtech.api.items.materialitem.MaterialMetaItem;
+import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.type.Material;
 import gregtech.api.unification.ore.OrePrefix;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class GBMetaItem extends MaterialMetaItem {
 
@@ -11,5 +18,23 @@ public class GBMetaItem extends MaterialMetaItem {
                 null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null);
+    }
+
+    public void registerOreDict() {
+        super.registerOreDict();
+
+        ArrayList<Short> generatedItems = ObfuscationReflectionHelper.getPrivateValue(MaterialMetaItem.class, this, "generatedItems");
+
+        Iterator var1 = generatedItems.iterator();
+
+        while (var1.hasNext()) {
+            short metaItem = (Short) var1.next();
+            OrePrefix prefix = this.orePrefixes[metaItem / 1000];
+            Material material = (Material) Material.MATERIAL_REGISTRY.getObjectById(metaItem % 1000);
+
+            if (prefix == OrePrefix.valueOf("oreChunk") || prefix == OrePrefix.valueOf("oreEnderChunk") || prefix == OrePrefix.valueOf("oreNetherChunk") || prefix == OrePrefix.valueOf("oreFineChunk"))
+                OreDictUnifier.registerOre(new ItemStack(this, 1, metaItem), "ore" + (material == null ? "" : material.toCamelCaseString()));
+        }
+
     }
 }
