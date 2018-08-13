@@ -6,14 +6,24 @@
   },
   "variants": {
     "type": {
-      "typeA": {
+      "basalt": {
         "textures": {
-          "layer0": "exnihilocreatio:items/item_pebble"
+          "layer0": "gregblockutils:items/basalt_pebble"
         }
       },
-      "typeB": {
+      "black_granite": {
         "textures": {
-          "layer0": "exnihilocreatio:items/item_pebble"
+          "layer0": "gregblockutils:items/black_granite_pebble"
+        }
+      },
+      "marble": {
+        "textures": {
+          "layer0": "gregblockutils:items/red_granite_pebble"
+        }
+      },
+      "red_granite": {
+        "textures": {
+          "layer0": "gregblockutils:items/marble_pebble"
         }
       }
     }

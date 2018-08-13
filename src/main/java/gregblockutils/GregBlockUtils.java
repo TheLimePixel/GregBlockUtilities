@@ -1,6 +1,8 @@
 package gregblockutils;
 
+import gregblockutils.Items.Chunks;
 import gregblockutils.Items.GBItems;
+import gregblockutils.Items.GBMetaItems;
 import gregblockutils.Machines.GBTileEntities;
 import gregblockutils.Recipes.GBMachineRecipes;
 import gregblockutils.Recipes.GBRecipeAddition;
@@ -11,8 +13,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
-
-import java.lang.management.GarbageCollectorMXBean;
 
 @Mod(modid = GregBlockUtils.MODID,
         name = GregBlockUtils.NAME,
@@ -34,10 +34,12 @@ public class GregBlockUtils {
     private static Logger logger;
 
     public GregBlockUtils() {
+        Chunks.preInit();
     }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        GBMetaItems.preInit();
         new GBItems();
     }
 
