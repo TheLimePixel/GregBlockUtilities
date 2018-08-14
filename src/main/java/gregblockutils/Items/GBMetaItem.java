@@ -32,8 +32,17 @@ public class GBMetaItem extends MaterialMetaItem {
             OrePrefix prefix = this.orePrefixes[metaItem / 1000];
             Material material = (Material) Material.MATERIAL_REGISTRY.getObjectById(metaItem % 1000);
 
-            if (prefix == OrePrefix.valueOf("oreChunk") || prefix == OrePrefix.valueOf("oreEnderChunk") || prefix == OrePrefix.valueOf("oreNetherChunk") || prefix == OrePrefix.valueOf("oreFineChunk"))
-                OreDictUnifier.registerOre(new ItemStack(this, 1, metaItem), "ore" + (material == null ? "" : material.toCamelCaseString()));
+            if (prefix == OrePrefix.valueOf("oreChunk"))
+                OreDictUnifier.registerOre(new ItemStack(this, 1, metaItem), "oreGravel" + (material == null ? "" : material.toCamelCaseString()));
+
+            if (prefix == OrePrefix.valueOf("oreEnderChunk"))
+                OreDictUnifier.registerOre(new ItemStack(this, 1, metaItem), "oreEndstone" + (material == null ? "" : material.toCamelCaseString()));
+
+            if (prefix == OrePrefix.valueOf("oreNetherChunk"))
+                OreDictUnifier.registerOre(new ItemStack(this, 1, metaItem), "oreNetherrack" + (material == null ? "" : material.toCamelCaseString()));
+
+            if (prefix == OrePrefix.valueOf("oreFineChunk"))
+                OreDictUnifier.registerOre(new ItemStack(this, 1, metaItem), "oreSand" + (material == null ? "" : material.toCamelCaseString()));
         }
 
     }

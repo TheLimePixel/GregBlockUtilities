@@ -16,7 +16,6 @@ import gregtech.api.gui.widgets.TankWidget;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.recipes.ModHandler;
-import gregtech.api.render.SimpleSidedCubeRenderer;
 import gregtech.api.render.Textures;
 import gregtech.api.util.GTUtility;
 import net.minecraft.block.BlockLiquid;
@@ -67,16 +66,15 @@ public class SteamPump extends MetaTileEntity {
     @Override
     @SideOnly(Side.CLIENT)
     public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
-        IVertexOperation[] colouredPipeline = (IVertexOperation[])ArrayUtils.add(pipeline, new ColourMultiplier(GTUtility.convertRGBtoOpaqueRGBA_CL(this.getPaintingColorForRendering())));
+        IVertexOperation[] colouredPipeline = (IVertexOperation[]) ArrayUtils.add(pipeline, new ColourMultiplier(GTUtility.convertRGBtoOpaqueRGBA_CL(this.getPaintingColorForRendering())));
         Textures.STEAM_CASING_BRONZE.render(renderState, translation, colouredPipeline);
         for (EnumFacing renderSide : EnumFacing.HORIZONTALS) {
             if (renderSide == getFrontFacing()) {
                 Textures.PIPE_OUT_OVERLAY.renderSided(renderSide, renderState, translation, pipeline);
             } else {
-                Textures.ADV_PUMP_OVERLAY.renderSided(renderSide, renderState, translation, pipeline);
+                GBTextures.STEAM_PUMP_OVERLAY.renderSided(renderSide, renderState, translation, pipeline);
             }
         }
-        Textures.SCREEN.renderSided(EnumFacing.UP, renderState, translation, pipeline);
         Textures.PIPE_IN_OVERLAY.renderSided(EnumFacing.DOWN, renderState, translation, pipeline);
         for (int i = 0; i < pumpHeadY; i++) {
             translation.translate(0.0, -1.0, 0.0);
@@ -140,8 +138,8 @@ public class SteamPump extends MetaTileEntity {
 
     @Override
     protected ModularUI createUI(EntityPlayer entityPlayer) {
-        ModularUI.Builder builder = ModularUI.defaultBuilder();
-        builder.image(7, 16, 81, 55, GuiTextures.DISPLAY);
+        ModularUI.Builder builder = ModularUI.builder(GuiTextures.BRONZE_BACKGROUND, 176, 166);
+        builder.image(7, 16, 81, 55, GBTextures.BRONZE_DISPLAY);
         TankWidget tankWidget = new TankWidget(exportFluids.getTankAt(0), 69, 52, 18, 18)
                 .setHideTooltip(true).setAlwaysShowFull(true);
         builder.widget(tankWidget);
@@ -150,11 +148,11 @@ public class SteamPump extends MetaTileEntity {
         builder.dynamicLabel(11, 40, tankWidget::getFluidLocalizedName, 0xFFFFFF);
         return builder.label(6, 6, getMetaFullName())
                 .widget(new FluidContainerSlotWidget(importItems, 0, 90, 17)
-                        .setBackgroundTexture(GuiTextures.SLOT, GuiTextures.IN_SLOT_OVERLAY))
-                .widget(new ImageWidget(91, 36, 14, 15, GuiTextures.TANK_ICON))
+                        .setBackgroundTexture(GuiTextures.BRONZE_SLOT, GBTextures.BRONZE_IN_SLOT_OVERLAY))
+                .widget(new ImageWidget(91, 36, 14, 15, GBTextures.BRONZE_TANK_ICON))
                 .widget(new SlotWidget(exportItems, 0, 90, 54, true, false)
-                        .setBackgroundTexture(GuiTextures.SLOT, GuiTextures.OUT_SLOT_OVERLAY))
-                .bindPlayerInventory(entityPlayer.inventory)
+                        .setBackgroundTexture(GuiTextures.BRONZE_SLOT, GBTextures.BRONZE_OUT_SLOT_OVERLAY))
+                .bindPlayerInventory(entityPlayer.inventory, GuiTextures.BRONZE_SLOT)
                 .build(getHolder(), entityPlayer);
     }
 

@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 @Mod(modid = GregBlockUtils.MODID,
         name = GregBlockUtils.NAME,
         version = GregBlockUtils.VERSION,
-        dependencies = "required-after:gtadditions"
+        dependencies = "required-after:gtadditions;required-after:exnihilocreatio"
 )
 public class GregBlockUtils {
     public static final String MODID = "gregblockutils";
