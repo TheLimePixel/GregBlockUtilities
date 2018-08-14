@@ -38,7 +38,7 @@ public class GBPebble extends Item implements IHasModel {
     }
 
     public static ItemStack getPebbleStack(String name) {
-        return new ItemStack(ModItems.pebbles, 1, names.indexOf(name));
+        return new ItemStack(GBItems.pebble, 1, names.indexOf(name));
     }
 
     /**
