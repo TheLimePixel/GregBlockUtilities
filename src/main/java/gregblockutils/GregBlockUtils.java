@@ -3,6 +3,7 @@ package gregblockutils;
 import gregblockutils.Items.Chunks;
 import gregblockutils.Items.GBItems;
 import gregblockutils.Items.GBMetaItems;
+import gregblockutils.Machines.GBTextures;
 import gregblockutils.Machines.GBTileEntities;
 import gregblockutils.Recipes.GBMachineRecipes;
 import gregblockutils.Recipes.GBRecipeAddition;
@@ -35,6 +36,7 @@ public class GregBlockUtils {
 
     public GregBlockUtils() {
         Chunks.preInit();
+        new GBTextures();
     }
 
     @EventHandler
