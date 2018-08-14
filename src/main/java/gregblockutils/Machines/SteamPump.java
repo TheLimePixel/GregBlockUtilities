@@ -46,7 +46,7 @@ public class SteamPump extends MetaTileEntity {
     private static final Cuboid6 PIPE_CUBOID = new Cuboid6(4 / 16.0, 0.0, 4 / 16.0, 12 / 16.0, 1.0, 12 / 16.0);
     private static final int MAX_PUMP_RANGE = 16;
     private static final int PUMP_SPEED_BASE = 120;
-    private static final int STEAM_DRAIN_PER_CYCLE = 250;
+    private static final int STEAM_DRAIN_PER_CYCLE = 1000;
 
     private Deque<BlockPos> fluidSourceBlocks = new ArrayDeque<>();
     private Deque<BlockPos> blocksToCheck = new ArrayDeque<>();
@@ -108,7 +108,7 @@ public class SteamPump extends MetaTileEntity {
     }
 
     public int getSteamCapacity() {
-        return 4000;
+        return 16000;
     }
 
     public FluidTankList createImportFluidHandler() {

@@ -31,7 +31,7 @@ public class GBRecipeAddition {
                     if (siftable.getMeshLevel() == recipe.getMesh().getMetadata())
                         builder.chancedOutput(siftable.getDrop().getItemStack(), (int) (siftable.getChance() * (float) Recipe.getMaxChancedValue()));
                 }
-                builder.duration(20).EUt(16);
+                builder.duration(100).EUt(4);
                 builder.buildAndRegister();
             }
         }
