@@ -18,12 +18,12 @@
       },
       "marble": {
         "textures": {
-          "layer0": "gregblockutils:items/red_granite_pebble"
+          "layer0": "gregblockutils:items/marble_pebble"
         }
       },
       "red_granite": {
         "textures": {
-          "layer0": "gregblockutils:items/marble_pebble"
+          "layer0": "gregblockutils:items/red_granite_pebble"
         }
       }
     }
