@@ -41,9 +41,9 @@ public class GBRecipeAddition {
         ModHandler.addShapedRecipe("pebbles_to_marble", MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.MARBLE, StoneBlock.ChiselingVariant.CRACKED), "PP", "PP", 'P', GBPebble.getPebbleStack("marble"));
         ModHandler.addShapedRecipe("pebbles_to_red_granite", MetaBlocks.GRANITE.getItemVariant(BlockGranite.GraniteVariant.RED_GRANITE, StoneBlock.ChiselingVariant.CRACKED), "PP", "PP", 'P', GBPebble.getPebbleStack("red_granite"));
 
-        ModHandler.addSmeltingRecipe(MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.BASALT, StoneBlock.ChiselingVariant.CRACKED),MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.BASALT, StoneBlock.ChiselingVariant.NORMAL));
+        ModHandler.addSmeltingRecipe(MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.BASALT, StoneBlock.ChiselingVariant.CRACKED), MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.BASALT, StoneBlock.ChiselingVariant.NORMAL));
         ModHandler.addSmeltingRecipe(OreDictUnifier.get(OrePrefix.cobblestone, Materials.GraniteBlack), OreDictUnifier.get(OrePrefix.stone, Materials.GraniteBlack));
-        ModHandler.addSmeltingRecipe(MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.MARBLE, StoneBlock.ChiselingVariant.CRACKED),MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.MARBLE, StoneBlock.ChiselingVariant.NORMAL));
+        ModHandler.addSmeltingRecipe(MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.MARBLE, StoneBlock.ChiselingVariant.CRACKED), MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.MARBLE, StoneBlock.ChiselingVariant.NORMAL));
         ModHandler.addSmeltingRecipe(OreDictUnifier.get(OrePrefix.cobblestone, Materials.GraniteRed), OreDictUnifier.get(OrePrefix.stone, Materials.GraniteRed));
     }
 
@@ -67,6 +67,8 @@ public class GBRecipeAddition {
         } else {
             ingotStack = OreDictUnifier.get(OrePrefix.dust, smeltingMaterial);
         }
+        ingotStack.setCount(material.smeltingMultiplier);
+
         if (!ingotStack.isEmpty() && doesMaterialUseNormalFurnace(material)) {
             ModHandler.addSmeltingRecipe(new UnificationEntry(orePrefix, material), ingotStack);
         }
