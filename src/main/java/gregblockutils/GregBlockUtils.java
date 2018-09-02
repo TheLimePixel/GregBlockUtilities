@@ -1,6 +1,6 @@
 package gregblockutils;
 
-import gregblockutils.Items.Chunks;
+import gregblockutils.Items.GBEnums;
 import gregblockutils.Items.GBItems;
 import gregblockutils.Items.GBMetaItems;
 import gregblockutils.Machines.GBTextures;
@@ -35,7 +35,7 @@ public class GregBlockUtils {
     private static Logger logger;
 
     public GregBlockUtils() {
-        Chunks.preInit();
+        GBEnums.preInit();
         new GBTextures();
     }
 

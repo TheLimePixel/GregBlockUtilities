@@ -25,3 +25,5 @@ item.gbpebble.basalt.name=Basalt Pebble
 item.gbpebble.black_granite.name=Black Granite Pebble
 item.gbpebble.marble.name=Marble Pebble
 item.gbpebble.red_granite.name=Red Granite Pebble
+
+item.material.oreprefix.plateDouble=Double %s Plate
