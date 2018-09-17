@@ -20,7 +20,7 @@ compileJava {
 }
 
 minecraft {
-    version = "${minecraft_version}-14.23.4.2729"
+    version = "${minecraft_version}-14.23.4.2749"
     runDir = "run"
     mappings = "snapshot_20171003"
 
@@ -46,8 +46,16 @@ repositories {
         url = "https://maven.blamejared.com/"
     }
     maven {
-        name "tehnut"
-        url "http://tehnut.info/maven"
+        name = "tehnut"
+        url = "http://tehnut.info/maven"
+    }
+    maven {
+        name = "Forgelin Maven"
+        url = "http://maven.shadowfacts.net/"
+    }
+    maven {
+        name = "Forestry Maven"
+        url = "http://maven.ic2.player.to"
     }
 }
 
@@ -58,6 +66,7 @@ dependencies {
     deobfCompile "CraftTweaker2:CraftTweaker2-MC${stripped_version}-Main:${crafttweaker_version}"
     deobfCompile "exnihilocreatio:exnihilocreatio:${short_version}-${exnihilo_version}"
     deobfCompile "mezz.jei:jei_${minecraft_version}:${jei_version}"
+    deobfCompile "net.sengir.forestry:forestry_${minecraft_version}:${forestry_version}"
     compile files("libs/gregtech-${minecraft_version}-${gt_version}.jar")
     compile files("libs/GregicAdditions-${minecraft_version}-${ga_version}.jar")
 }

@@ -3,6 +3,8 @@ package gregblockutils.Recipes;
 import exnihilocreatio.compatibility.jei.sieve.SieveRecipe;
 import exnihilocreatio.registries.manager.ExNihiloRegistryManager;
 import exnihilocreatio.registries.types.Siftable;
+import forestry.apiculture.ModuleApiculture;
+import forestry.apiculture.genetics.Bee;
 import gregblockutils.Items.GBPebble;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.Recipe;
