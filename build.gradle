@@ -57,6 +57,10 @@ repositories {
         name = "Forestry Maven"
         url = "http://maven.ic2.player.to"
     }
+    maven {
+        name = "CurseForge"
+        url = "https://minecraft.curseforge.com/api/maven/"
+    }
 }
 
 dependencies {
@@ -67,6 +71,7 @@ dependencies {
     deobfCompile "exnihilocreatio:exnihilocreatio:${short_version}-${exnihilo_version}"
     deobfCompile "mezz.jei:jei_${minecraft_version}:${jei_version}"
     deobfCompile "net.sengir.forestry:forestry_${minecraft_version}:${forestry_version}"
+    deobfCompile "binnie:binnie-mods-${minecraft_version}:${binnie_version}"
     compile files("libs/gregtech-${minecraft_version}-${gt_version}.jar")
     compile files("libs/GregicAdditions-${minecraft_version}-${ga_version}.jar")
 }
