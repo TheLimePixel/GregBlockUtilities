@@ -11,7 +11,6 @@ import forestry.core.fluids.Fluids;
 import gregblockutils.Items.GBPebble;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.Recipe;
-import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
@@ -59,13 +58,6 @@ public class GBRecipeAddition {
         ModHandler.addSmeltingRecipe(OreDictUnifier.get(OrePrefix.cobblestone, Materials.GraniteBlack), OreDictUnifier.get(OrePrefix.stone, Materials.GraniteBlack));
         ModHandler.addSmeltingRecipe(MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.MARBLE, StoneBlock.ChiselingVariant.CRACKED), MetaBlocks.MINERAL.getItemVariant(BlockMineral.MineralVariant.MARBLE, StoneBlock.ChiselingVariant.NORMAL));
         ModHandler.addSmeltingRecipe(OreDictUnifier.get(OrePrefix.cobblestone, Materials.GraniteRed), OreDictUnifier.get(OrePrefix.stone, Materials.GraniteRed));
-
-        for (Material m : IngotMaterial.MATERIAL_REGISTRY) {
-            if (!OreDictUnifier.get(OrePrefix.valueOf("plateDouble"), m).isEmpty()) {
-                RecipeMaps.BENDER_RECIPES.recipeBuilder().EUt(24).duration((int) m.getMass() * 2).inputs(OreDictUnifier.get(OrePrefix.plate, m, 2)).circuitMeta(3).outputs(OreDictUnifier.get(OrePrefix.valueOf("plateDouble"), m)).buildAndRegister();
-                ModHandler.addShapedRecipe("double_plate_" + m.toString(), OreDictUnifier.get(OrePrefix.valueOf("plateDouble"), m), "h", "P", "P", 'P', OreDictUnifier.get(OrePrefix.plate, m));
-            }
-        }
 
         //Bees
         List<ItemStack> allFlowers = OreDictionary.getOres("flower").stream()
