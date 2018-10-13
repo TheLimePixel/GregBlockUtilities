@@ -111,7 +111,7 @@ public class SteamPump extends MetaTileEntity {
 
     @Override
     protected FluidTankList createExportFluidHandler() {
-        return new FluidTankList(new FluidTank(4000));
+        return new FluidTankList(false, new FluidTank(4000));
     }
 
     public int getSteamCapacity() {
@@ -120,7 +120,7 @@ public class SteamPump extends MetaTileEntity {
 
     public FluidTankList createImportFluidHandler() {
         this.steamFluidTank = (new FilteredFluidHandler(this.getSteamCapacity())).setFillPredicate(ModHandler::isSteam);
-        return new FluidTankList(new IFluidTank[]{this.steamFluidTank});
+        return new FluidTankList(false, new IFluidTank[]{this.steamFluidTank});
     }
 
     @Override
@@ -154,7 +154,7 @@ public class SteamPump extends MetaTileEntity {
         builder.dynamicLabel(11, 30, tankWidget::getFormattedFluidAmount, 0xFFFFFF);
         builder.dynamicLabel(11, 40, tankWidget::getFluidLocalizedName, 0xFFFFFF);
         return builder.label(6, 6, getMetaFullName())
-                .widget(new FluidContainerSlotWidget(importItems, 0, 90, 17)
+                .widget(new FluidContainerSlotWidget(importItems, 0, 90, 17, false)
                         .setBackgroundTexture(GuiTextures.BRONZE_SLOT, GBTextures.BRONZE_IN_SLOT_OVERLAY))
                 .widget(new ImageWidget(91, 36, 14, 15, GBTextures.BRONZE_TANK_ICON))
                 .widget(new SlotWidget(exportItems, 0, 90, 54, true, false)
