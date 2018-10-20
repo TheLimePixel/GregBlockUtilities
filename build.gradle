@@ -74,6 +74,7 @@ dependencies {
     deobfCompile "binnie:binnie-mods-${minecraft_version}:${binnie_version}"
     compile files("libs/gregtech-${minecraft_version}-${gt_version}.jar")
     compile files("libs/GregicAdditions-${minecraft_version}-${ga_version}.jar")
+    compile files("libs/BetterQuesting-${bq_version}.jar")
 }
 
 processResources {

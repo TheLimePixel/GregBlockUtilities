@@ -1,8 +1,6 @@
 package gregblockutils;
 
 import gregblockutils.Recipes.GBRecipeAddition;
-import gregblockutils.Recipes.GBRecipeMaps;
-import gregtech.api.unification.material.type.DustMaterial;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -45,5 +43,8 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         GBRecipeAddition.register();
+    }
+
+    public void registerExpansion() {
     }
 }
