@@ -76,7 +76,6 @@ public class RecipeMapExtended<R extends RecipeBuilder<R>> extends RecipeMap {
                 }
             }
         }
-
     }
 
     private static int[] determineSlotsGrid(int itemInputsCount) {
