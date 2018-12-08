@@ -51,7 +51,7 @@ public class SteamRockBreaker extends MetaTileEntity {
     public void update() {
         super.update();
         if (!getWorld().isRemote) {
-            if (checkSides(Blocks.LAVA) && checkSides(Blocks.WATER) && getTimer() % 32 == 0 && steamFluidTank.getFluidAmount() < STEAM_DRAIN_PER_CYCLE * 4) {
+            if (checkSides(Blocks.LAVA) && checkSides(Blocks.WATER) && getTimer() % 32 == 0 && steamFluidTank.getFluidAmount() >= STEAM_DRAIN_PER_CYCLE * 4) {
                 exportItems.insertItem(0, new ItemStack(Blocks.COBBLESTONE), false);
                 steamFluidTank.drain(STEAM_DRAIN_PER_CYCLE, true);
             }
@@ -64,11 +64,6 @@ public class SteamRockBreaker extends MetaTileEntity {
     @SideOnly(Side.CLIENT)
     public TextureAtlasSprite getParticleTexture() {
         return Textures.STEAM_CASING_BRONZE.getSpriteOnSide(SimpleSidedCubeRenderer.RenderSide.TOP);
-    }
-
-    @Override
-    protected FluidTankList createExportFluidHandler() {
-        return new FluidTankList(false, new FluidTank(4000));
     }
 
     public int getSteamCapacity() {
