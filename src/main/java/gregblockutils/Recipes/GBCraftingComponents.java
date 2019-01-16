@@ -584,7 +584,4 @@ public enum GBCraftingComponents {
     };
 
     abstract Object getIngredient(int tier);
-
-    public static class GBRecipeMaps {
-    }
 }

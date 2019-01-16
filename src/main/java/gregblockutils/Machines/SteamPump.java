@@ -27,6 +27,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
@@ -56,7 +57,7 @@ public class SteamPump extends MetaTileEntity {
     private int pumpHeadY;
     protected FluidTank steamFluidTank;
 
-    public SteamPump(String metaTileEntityId) {
+    public SteamPump(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId);
     }
 
@@ -68,13 +69,14 @@ public class SteamPump extends MetaTileEntity {
     @Override
     @SideOnly(Side.CLIENT)
     public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
-        IVertexOperation[] colouredPipeline = (IVertexOperation[]) ArrayUtils.add(pipeline, new ColourMultiplier(GTUtility.convertRGBtoOpaqueRGBA_CL(this.getPaintingColorForRendering())));
-        Textures.STEAM_CASING_BRONZE.render(renderState, translation, colouredPipeline);
+        ColourMultiplier multiplier = new ColourMultiplier(GTUtility.convertRGBtoOpaqueRGBA_CL(getPaintingColorForRendering()));
+        IVertexOperation[] coloredPipeline = ArrayUtils.add(pipeline, multiplier);
+        Textures.STEAM_CASING_BRONZE.render(renderState, translation, coloredPipeline);
         for (EnumFacing renderSide : EnumFacing.HORIZONTALS) {
             if (renderSide == getFrontFacing()) {
                 Textures.PIPE_OUT_OVERLAY.renderSided(renderSide, renderState, translation, pipeline);
             } else {
-                GBTextures.STEAM_PUMP_OVERLAY.renderSided(renderSide, renderState, translation, pipeline);
+                GBTextures.STEAM_PUMP_OVERLAY.renderSided(renderSide, renderState, translation, coloredPipeline);
             }
         }
         Textures.PIPE_IN_OVERLAY.renderSided(EnumFacing.DOWN, renderState, translation, pipeline);
@@ -131,11 +133,6 @@ public class SteamPump extends MetaTileEntity {
     @Override
     protected IItemHandlerModifiable createExportItemHandler() {
         return new ItemStackHandler(1);
-    }
-
-    @Override
-    public boolean hasCapability(Capability<?> capability, EnumFacing side) {
-        return (side == null || side.getAxis() != EnumFacing.Axis.Y) && super.hasCapability(capability, side);
     }
 
     @Override

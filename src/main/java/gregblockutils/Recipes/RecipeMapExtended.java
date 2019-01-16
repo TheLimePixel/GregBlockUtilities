@@ -41,7 +41,7 @@ public class RecipeMapExtended<R extends RecipeBuilder<R>> extends RecipeMap {
         return builder;
     }
 
-    private void addInventorySlotGroup(ModularUI.Builder builder, IItemHandlerModifiable itemHandler, FluidTankList fluidHandler, boolean isOutputs) {
+    protected void addInventorySlotGroup(ModularUI.Builder builder, IItemHandlerModifiable itemHandler, FluidTankList fluidHandler, boolean isOutputs) {
         int itemInputsCount = itemHandler.getSlots();
         int fluidInputsCount = fluidHandler.getTanks();
         boolean invertFluids = false;
@@ -78,7 +78,7 @@ public class RecipeMapExtended<R extends RecipeBuilder<R>> extends RecipeMap {
         }
     }
 
-    private static int[] determineSlotsGrid(int itemInputsCount) {
+    protected static int[] determineSlotsGrid(int itemInputsCount) {
         int itemSlotsToLeft = 0;
         int itemSlotsToDown = 0;
         double sqrt = Math.sqrt(itemInputsCount);
