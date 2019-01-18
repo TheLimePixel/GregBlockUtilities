@@ -137,7 +137,7 @@ public class SteamPump extends MetaTileEntity {
 
     @Override
     public <T> T getCapability(Capability<T> capability, EnumFacing side) {
-        return (side == null || side.getAxis() == EnumFacing.Axis.Y) ? null : super.getCapability(capability, side);
+        return (side == null || side == EnumFacing.DOWN) ? null : super.getCapability(capability, side);
     }
 
     @Override
