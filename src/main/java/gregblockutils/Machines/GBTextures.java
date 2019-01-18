@@ -15,7 +15,7 @@ public class GBTextures {
     public static final TextureArea BRONZE_TANK_ICON = TextureArea.fullImage("textures/gui/steam/bronze_tank_icon.png");
 
     static {
-        STEAM_PUMP_OVERLAY = new SimpleOverlayRenderer("machine/overlay_steam_pump");
+        STEAM_PUMP_OVERLAY = new SimpleOverlayRenderer("overlay/machine/overlay_steam_pump");
         BEE_ATTRACTOR = new OrientedOverlayRenderer("machines/attractor", new OrientedOverlayRenderer.OverlayFace[]{OverlayFace.FRONT, OverlayFace.SIDE});
     }
 }
