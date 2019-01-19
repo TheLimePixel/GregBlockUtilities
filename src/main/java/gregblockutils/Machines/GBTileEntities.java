@@ -35,7 +35,6 @@ public class GBTileEntities {
         BEE_ATTRACTOR[6] = GregTechAPI.registerMetaTileEntity(2765, new SimpleMachineMetaTileEntity(location("attractor.zpm"), GBRecipeMaps.ATTRACTOR_RECIPES, GBTextures.BEE_ATTRACTOR, 7));
         BEE_ATTRACTOR[7] = GregTechAPI.registerMetaTileEntity(2766, new SimpleMachineMetaTileEntity(location("attractor.uv"), GBRecipeMaps.ATTRACTOR_RECIPES, GBTextures.BEE_ATTRACTOR, 8));
 
-
         STEAM_SIEVE = GregTechAPI.registerMetaTileEntity(2767, new SteamSieve(location("sieve.steam"), false));
     }
 

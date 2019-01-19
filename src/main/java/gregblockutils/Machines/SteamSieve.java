@@ -1,6 +1,7 @@
 package gregblockutils.Machines;
 
 import gregblockutils.Recipes.GBRecipeMaps;
+import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
 import gregtech.api.gui.widgets.ImageWidget;
 import gregtech.api.gui.widgets.LabelWidget;
@@ -18,7 +19,7 @@ import net.minecraftforge.items.ItemStackHandler;
 public class SteamSieve extends SteamMetaTileEntity {
 
     public SteamSieve(ResourceLocation metaTileEntityId, boolean isHighPressure) {
-        super(metaTileEntityId, GBRecipeMaps.SIEVE_RECIPES, Textures.EXTRACTOR_OVERLAY, isHighPressure);
+        super(metaTileEntityId, GBRecipeMaps.SIEVE_RECIPES, Textures.SIFTER_OVERLAY, isHighPressure);
     }
 
     @Override
@@ -38,7 +39,7 @@ public class SteamSieve extends SteamMetaTileEntity {
 
     @Override
     public ModularUI createUI(EntityPlayer player) {
-        ModularUI.Builder builder = ModularUI.builder(GBTextures.BRONZE_LARGE_BACKGROUND_TEXTURE, 176, 216)
+        ModularUI.Builder builder = ModularUI.builder(GuiTextures.BRONZE_BACKGROUND, 176, 216)
                 .widget(new LabelWidget(6, 6, getMetaFullName()))
                 .widget(new ImageWidget(79, 42, 18, 18, getFullGuiTexture("not_enough_steam_%s"))
                         .setPredicate(() -> workableHandler.isHasNotEnoughEnergy()))

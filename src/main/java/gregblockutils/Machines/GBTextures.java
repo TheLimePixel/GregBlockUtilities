@@ -13,7 +13,6 @@ public class GBTextures {
     public static final TextureArea BRONZE_IN_SLOT_OVERLAY = TextureArea.fullImage("textures/gui/steam/bronze_in_slot_overlay.png");
     public static final TextureArea BRONZE_OUT_SLOT_OVERLAY = TextureArea.fullImage("textures/gui/steam/bronze_out_slot_overlay.png");
     public static final TextureArea BRONZE_TANK_ICON = TextureArea.fullImage("textures/gui/steam/bronze_tank_icon.png");
-    public static final TextureArea BRONZE_LARGE_BACKGROUND_TEXTURE = TextureArea.fullImage("textures/gui/steam/bronze_large_gui.png");
 
     static {
         STEAM_PUMP_OVERLAY = new SimpleOverlayRenderer("overlay/machine/overlay_steam_pump");

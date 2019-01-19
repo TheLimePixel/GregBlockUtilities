@@ -20,6 +20,7 @@ import static gregblockutils.Recipes.GBCraftingComponents.*;
 public class GBMachineRecipes {
     public static void init() {
         ModHandler.addShapedRecipe("steam_pump", GBTileEntities.STEAM_PUMP.getStackForm(), "NLN", "NMN", "LRL", 'N', new UnificationEntry(OrePrefix.pipeMedium, Materials.Bronze), 'L', new UnificationEntry(OrePrefix.pipeLarge, Materials.Bronze), 'M', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.BRONZE_HULL), 'R', new UnificationEntry(OrePrefix.rotor, Materials.Bronze));
+        ModHandler.addShapedRecipe("steam_sieve", GBTileEntities.STEAM_SIEVE.getStackForm(), "BPB", "BMB", "BSB", 'B', new UnificationEntry(OrePrefix.pipeSmall, Materials.Bronze), 'M', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.BRONZE_HULL), 'S', new ItemStack(ModBlocks.sieve), 'P', PISTON);
         registerMachineRecipe(GBTileEntities.ELECTRIC_SIEVE, "CPC", "FMF", "OSO", 'M', HULL, 'C', CIRCUIT, 'O', CABLE, 'F', CONVEYOR, 'S', new ItemStack(ModBlocks.sieve), 'P', PISTON);
         registerMachineRecipe(GBTileEntities.BEE_ATTRACTOR, "CGC", "FMF", "SPS", 'M', HULL, 'C', CABLE, 'G', GLASS, 'F', ModuleCore.getItems().impregnatedCasing.getItemStack(), 'S', CIRCUIT, 'P', PUMP);
     }
