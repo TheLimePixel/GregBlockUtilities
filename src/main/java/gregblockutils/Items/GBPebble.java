@@ -2,7 +2,6 @@ package gregblockutils.Items;
 
 import com.google.common.collect.Lists;
 import exnihilocreatio.ExNihiloCreatio;
-import exnihilocreatio.ModItems;
 import exnihilocreatio.entities.ProjectileStone;
 import exnihilocreatio.util.Data;
 import exnihilocreatio.util.IHasModel;

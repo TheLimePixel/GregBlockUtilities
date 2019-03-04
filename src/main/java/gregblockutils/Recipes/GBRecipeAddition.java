@@ -36,10 +36,10 @@ import java.util.stream.Collectors;
 public class GBRecipeAddition {
     public static void postInit() {
         for (SieveRecipe recipe : ExNihiloRegistryManager.SIEVE_REGISTRY.getRecipeList()) {
-            for (Object object : recipe.getInputs()) {
+            for (ItemStack stack : recipe.getSievables()) {
                 SimpleRecipeBuilder builder = GBRecipeMaps.SIEVE_RECIPES.recipeBuilder();
-                builder.notConsumable(recipe.getMesh()).inputs((ItemStack) object);
-                for (Siftable siftable : ExNihiloRegistryManager.SIEVE_REGISTRY.getDrops((ItemStack) recipe.getInputs().get(0))) {
+                builder.notConsumable(recipe.getMesh()).inputs(stack);
+                for (Siftable siftable : ExNihiloRegistryManager.SIEVE_REGISTRY.getDrops(stack)) {
                     if (siftable.getMeshLevel() == recipe.getMesh().getMetadata())
                         builder.chancedOutput(siftable.getDrop().getItemStack(), (int) (siftable.getChance() * (float) Recipe.getMaxChancedValue()));
                 }
