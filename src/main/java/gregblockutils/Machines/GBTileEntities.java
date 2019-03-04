@@ -14,8 +14,10 @@ public class GBTileEntities {
     public static SteamPump STEAM_PUMP;
     public static SteamSieve STEAM_SIEVE;
 
+    public static SteamRockBreaker STEAM_BREAKER;
+
     public static void init() {
-        STEAM_SIEVE = GregTechAPI.registerMetaTileEntity(2767, new SteamSieve(location("sieve.steam"), false));
+        STEAM_SIEVE = GregTechAPI.registerMetaTileEntity(2749, new SteamSieve(location("sieve.steam"), false));
 
         ELECTRIC_SIEVE[0] = GregTechAPI.registerMetaTileEntity(2750, new SimpleMachineMetaTileEntity(location("sieve.lv"), GBRecipeMaps.SIEVE_RECIPES, Textures.SIFTER_OVERLAY, 1));
         ELECTRIC_SIEVE[1] = GregTechAPI.registerMetaTileEntity(2751, new SimpleMachineMetaTileEntity(location("sieve.mv"), GBRecipeMaps.SIEVE_RECIPES, Textures.SIFTER_OVERLAY, 2));
@@ -36,8 +38,9 @@ public class GBTileEntities {
         BEE_ATTRACTOR[5] = GregTechAPI.registerMetaTileEntity(2764, new SimpleMachineMetaTileEntity(location("attractor.luv"), GBRecipeMaps.ATTRACTOR_RECIPES, GBTextures.BEE_ATTRACTOR, 6));
         BEE_ATTRACTOR[6] = GregTechAPI.registerMetaTileEntity(2765, new SimpleMachineMetaTileEntity(location("attractor.zpm"), GBRecipeMaps.ATTRACTOR_RECIPES, GBTextures.BEE_ATTRACTOR, 7));
         BEE_ATTRACTOR[7] = GregTechAPI.registerMetaTileEntity(2766, new SimpleMachineMetaTileEntity(location("attractor.uv"), GBRecipeMaps.ATTRACTOR_RECIPES, GBTextures.BEE_ATTRACTOR, 8));
-    }
 
+        STEAM_BREAKER = GregTechAPI.registerMetaTileEntity(2767, new SteamRockBreaker(location("rock_breaker.steam")));
+    }
 
     private static ResourceLocation location(String name) {
         return new ResourceLocation(GregBlockUtils.MODID, name);

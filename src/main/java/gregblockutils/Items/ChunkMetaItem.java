@@ -30,7 +30,7 @@ public class ChunkMetaItem extends MaterialMetaItem {
         while (var1.hasNext()) {
             short metaItem = (Short) var1.next();
             OrePrefix prefix = this.orePrefixes[metaItem / 1000];
-            Material material = (Material) Material.MATERIAL_REGISTRY.getObjectById(metaItem % 1000);
+            Material material = Material.MATERIAL_REGISTRY.getObjectById(metaItem % 1000);
 
             if (prefix == OrePrefix.valueOf("oreChunk"))
                 OreDictUnifier.registerOre(new ItemStack(this, 1, metaItem), "oreGravel" + (material == null ? "" : material.toCamelCaseString()));

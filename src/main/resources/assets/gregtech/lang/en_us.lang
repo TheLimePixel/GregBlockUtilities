@@ -28,6 +28,8 @@ gregblockutils.machine.attractor.uv.name=Advanced Bee Attractor VII
 gregblockutils.machine.pump.steam.name=Steam Pump
 gregblockutils.machine.sieve.steam.name=Steam Sieve
 
+gregblockutils.machine.rock_breaker.steam.name=Steam Rock Breaker
+
 item.material.oreprefix.oreChunk=%s Ore Chunk
 item.material.oreprefix.oreEnderChunk=Ender %s Ore Chunk
 item.material.oreprefix.oreNetherChunk=Nether %s Ore Chunk
