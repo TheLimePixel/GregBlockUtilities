@@ -13,7 +13,6 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.type.DustMaterial;
 import gregtech.api.unification.material.type.GemMaterial;
 import gregtech.api.unification.material.type.IngotMaterial;
@@ -145,32 +144,41 @@ public class GBRecipeAddition {
                 .chancedOutput(BeeManager.beeRoot.getMemberStack(BeeDefinition.VALIANT.getIndividual(), EnumBeeType.PRINCESS), 100)
                 .chancedOutput(BeeManager.beeRoot.getMemberStack(BeeDefinition.VALIANT.getIndividual(), EnumBeeType.DRONE), 300)
                 .EUt(26).duration(200).buildAndRegister();
+
+        for (Material mat : Material.MATERIAL_REGISTRY) {
+            if (mat instanceof DustMaterial && mat.hasFlag(DustMaterial.MatFlags.GENERATE_ORE)) {
+                ModHandler.addShapedRecipe("chunk_to_crushed_" + mat.toString(), OreDictUnifier.get(OrePrefix.crushed, mat, ((DustMaterial) mat).oreMultiplier), "h", "O", 'O', new UnificationEntry(OrePrefix.valueOf("oreChunk"), mat));
+                ModHandler.addShapedRecipe("ender_chunk_to_crushed_" + mat.toString(), OreDictUnifier.get(OrePrefix.crushed, mat, ((DustMaterial) mat).oreMultiplier), "h", "O", 'O', new UnificationEntry(OrePrefix.valueOf("oreEnderChunk"), mat));
+                ModHandler.addShapedRecipe("nether_chunk_to_crushed_" + mat.toString(), OreDictUnifier.get(OrePrefix.crushed, mat, ((DustMaterial) mat).oreMultiplier), "h", "O", 'O', new UnificationEntry(OrePrefix.valueOf("oreNetherChunk"), mat));
+                ModHandler.addShapedRecipe("sandy_chunk_to_crushed_" + mat.toString(), OreDictUnifier.get(OrePrefix.crushed, mat, ((DustMaterial) mat).oreMultiplier), "h", "O", 'O', new UnificationEntry(OrePrefix.valueOf("oreSandyChunk"), mat));
+            }
+        }
     }
 
     public static void register() {
         OrePrefix.valueOf("oreChunk").addProcessingHandler(DustMaterial.class, GBRecipeAddition::processOre);
         OrePrefix.valueOf("oreEnderChunk").addProcessingHandler(DustMaterial.class, GBRecipeAddition::processOre);
         OrePrefix.valueOf("oreNetherChunk").addProcessingHandler(DustMaterial.class, GBRecipeAddition::processOre);
-        OrePrefix.valueOf("oreFineChunk").addProcessingHandler(DustMaterial.class, GBRecipeAddition::processOre);
+        OrePrefix.valueOf("oreSandyChunk").addProcessingHandler(DustMaterial.class, GBRecipeAddition::processOre);
     }
 
     public static void processOre(OrePrefix orePrefix, DustMaterial material) {
-        ItemStack ingotStack;
+        ItemStack ingotStack = null;
         DustMaterial smeltingMaterial = material;
         if (material.directSmelting != null) {
             smeltingMaterial = material.directSmelting;
         }
-        if (smeltingMaterial instanceof IngotMaterial) {
+        if (smeltingMaterial instanceof IngotMaterial)
             ingotStack = OreDictUnifier.get(OrePrefix.ingot, smeltingMaterial);
-        } else if (smeltingMaterial instanceof GemMaterial) {
+        else if (smeltingMaterial instanceof GemMaterial)
             ingotStack = OreDictUnifier.get(OrePrefix.gem, smeltingMaterial);
-        } else {
-            ingotStack = OreDictUnifier.get(OrePrefix.dust, smeltingMaterial);
-        }
-        ingotStack.setCount(material.smeltingMultiplier);
 
-        if (!ingotStack.isEmpty() && doesMaterialUseNormalFurnace(material)) {
-            ModHandler.addSmeltingRecipe(new UnificationEntry(orePrefix, material), ingotStack);
+        if (ingotStack != null) {
+            ingotStack.setCount(material.smeltingMultiplier);
+
+            if (!ingotStack.isEmpty() && doesMaterialUseNormalFurnace(material)) {
+                ModHandler.addSmeltingRecipe(new UnificationEntry(orePrefix, material), ingotStack);
+            }
         }
     }
 

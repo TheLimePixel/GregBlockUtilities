@@ -34,7 +34,7 @@ public class SteamSieve extends SteamMetaTileEntity {
 
     @Override
     public IItemHandlerModifiable createExportItemHandler() {
-        return new ItemStackHandler(28);
+        return new ItemStackHandler(24);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class SteamSieve extends SteamMetaTileEntity {
                                 getFullGuiTexture("progress_bar_%s_macerator_filled"),
                                 ProgressWidget.MoveType.HORIZONTAL));
 
-        for (int y = 0; y < 7; y++) {
+        for (int y = 0; y < 6; y++) {
             for (int x = 0; x < 4; x++) {
                 builder.widget(new SlotWidget(this.exportItems, y * 4 + x, 98 + x * 18, 7 + y * 18, true, false).setBackgroundTexture(BRONZE_SLOT_BACKGROUND_TEXTURE));
             }

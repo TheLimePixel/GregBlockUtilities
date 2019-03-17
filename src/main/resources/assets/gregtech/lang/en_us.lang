@@ -33,7 +33,7 @@ gregblockutils.machine.rock_breaker.steam.name=Steam Rock Breaker
 item.material.oreprefix.oreChunk=%s Ore Chunk
 item.material.oreprefix.oreEnderChunk=Ender %s Ore Chunk
 item.material.oreprefix.oreNetherChunk=Nether %s Ore Chunk
-item.material.oreprefix.oreFineChunk=Fine %s Ore Chunk
+item.material.oreprefix.oreSandyChunk=Sandy %s Ore Chunk
 
 item.gbpebble.basalt.name=Basalt Pebble
 item.gbpebble.black_granite.name=Black Granite Pebble

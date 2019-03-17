@@ -1,12 +1,17 @@
 package gregblockutils;
 
+import exnihilocreatio.registries.manager.ExNihiloRegistryManager;
+import gregblockutils.Events.StoneGenEvents;
+import gregblockutils.ExNihilo.GBSieveDrops;
 import gregblockutils.Items.GBEnums;
 import gregblockutils.Items.GBItems;
 import gregblockutils.Items.GBMetaItems;
+import gregblockutils.ExNihilo.SieveDrops;
 import gregblockutils.Machines.GBTextures;
 import gregblockutils.Machines.GBTileEntities;
 import gregblockutils.Recipes.GBMachineRecipes;
 import gregblockutils.Recipes.GBRecipeAddition;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -43,12 +48,15 @@ public class GregBlockUtils {
     public void preInit(FMLPreInitializationEvent event) {
         GBMetaItems.preInit();
         new GBItems();
+        SieveDrops.addSieveRecipe();
+        ExNihiloRegistryManager.registerSieveDefaultRecipeHandler(new GBSieveDrops());
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
         GBTileEntities.init();
         GBMachineRecipes.init();
+        MinecraftForge.EVENT_BUS.register(new StoneGenEvents());
     }
 
     @EventHandler

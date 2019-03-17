@@ -13,7 +13,7 @@ import java.util.Iterator;
 public class ChunkMetaItem extends MaterialMetaItem {
 
     public ChunkMetaItem() {
-        super(OrePrefix.valueOf("oreChunk"), OrePrefix.valueOf("oreEnderChunk"), OrePrefix.valueOf("oreNetherChunk"), OrePrefix.valueOf("oreFineChunk"),
+        super(OrePrefix.valueOf("oreChunk"), OrePrefix.valueOf("oreEnderChunk"), OrePrefix.valueOf("oreNetherChunk"), OrePrefix.valueOf("oreSandyChunk"),
                 null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null,
                 null, null, null, null, null, null, null,
@@ -41,7 +41,7 @@ public class ChunkMetaItem extends MaterialMetaItem {
             if (prefix == OrePrefix.valueOf("oreNetherChunk"))
                 OreDictUnifier.registerOre(new ItemStack(this, 1, metaItem), "oreNetherrack" + (material == null ? "" : material.toCamelCaseString()));
 
-            if (prefix == OrePrefix.valueOf("oreFineChunk"))
+            if (prefix == OrePrefix.valueOf("oreSandyChunk"))
                 OreDictUnifier.registerOre(new ItemStack(this, 1, metaItem), "oreSand" + (material == null ? "" : material.toCamelCaseString()));
         }
 

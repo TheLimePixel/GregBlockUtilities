@@ -12,7 +12,7 @@ public class GBRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> ATTRACTOR_RECIPES;
 
     static {
-        SIEVE_RECIPES = (new RecipeMapExtended("electric_sieve", 2, 2, 1, 28, 0, 0, 0, 0, 1, new SimpleRecipeBuilder()).setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, ProgressWidget.MoveType.HORIZONTAL));
+        SIEVE_RECIPES = (new RecipeMapExtended("electric_sieve", 2, 2, 1, 24, 0, 0, 0, 0, 1, new SimpleRecipeBuilder()).setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, ProgressWidget.MoveType.HORIZONTAL));
         ATTRACTOR_RECIPES = (new RecipeMap("attractor", 0, 1, 1, 6, 1, 1, 0, 0, 1, new SimpleRecipeBuilder()).setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL));
     }
 }
