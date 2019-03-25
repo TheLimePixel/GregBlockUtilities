@@ -2,20 +2,21 @@ package gregblockutils.Events;
 
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+@Mod.EventBusSubscriber
 public class StoneGenEvents {
     @SubscribeEvent(priority = EventPriority.HIGH)
     public void stoneGen(BlockEvent.FluidPlaceBlockEvent event) {
         if (event.getOriginalState().getBlock() == Blocks.FLOWING_LAVA) {
             BlockPos lavaPos = event.getLiquidPos(), waterPos = null;
-            World world = Minecraft.getMinecraft().world;
+            World world = event.getWorld();
             for (BlockPos pos : new BlockPos[]{lavaPos.east(), lavaPos.west(), lavaPos.north(), lavaPos.south()})
                 if (world.getBlockState(pos).getBlock().getMaterial(world.getBlockState(pos)) == Material.WATER) {
                     waterPos = pos;
