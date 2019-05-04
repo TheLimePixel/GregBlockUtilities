@@ -174,7 +174,7 @@ public class GBRecipeAddition {
             ingotStack = OreDictUnifier.get(OrePrefix.gem, smeltingMaterial);
 
         if (ingotStack != null) {
-            ingotStack.setCount(material.smeltingMultiplier);
+            ingotStack.setCount(material.oreMultiplier);
 
             if (!ingotStack.isEmpty() && doesMaterialUseNormalFurnace(material)) {
                 ModHandler.addSmeltingRecipe(new UnificationEntry(orePrefix, material), ingotStack);

@@ -186,12 +186,15 @@ public class SieveDrops {
         addRecipe(granite, Materials.Redstone, 0.1938, 2);
         addRecipe(granite, Materials.Ruby, 0.0646, 2);
         addRecipe(granite, Materials.Cinnabar, 0.0646, 2);
+        addRecipe(granite, Materials.Chromite, 0.01615, 2);
         addRecipe(andesite, Materials.Redstone, 0.1938, 2);
         addRecipe(andesite, Materials.Ruby, 0.0646, 2);
         addRecipe(andesite, Materials.Cinnabar, 0.0646, 2);
+        addRecipe(andesite, Materials.Chromite, 0.01615, 2);
         addRecipe(sand, Materials.Redstone, 0.1938, 2);
         addRecipe(sand, Materials.Ruby, 0.0646, 2);
         addRecipe(sand, Materials.Cinnabar, 0.0646, 2);
+        addRecipe(sand, Materials.Chromite, 0.01615, 2);
         addRecipe(gravel, Materials.Salt, 0.0952, 1);
         addRecipe(gravel, Materials.RockSalt, 0.0833, 1);
         addRecipe(gravel, Materials.Lepidolite, 0.0357, 1);
@@ -271,6 +274,7 @@ public class SieveDrops {
         addRecipe(rack, Materials.Redstone, 0.0864, 4);
         addRecipe(rack, Materials.Ruby, 0.0288, 4);
         addRecipe(rack, Materials.Cinnabar, 0.0288, 4);
+        addRecipe(rack, Materials.Chromite, 0.0072, 4);
         addRecipe(rack, Materials.Sulfur, 0.1632, 2);
         addRecipe(rack, Materials.Pyrite, 0.0544, 2);
         addRecipe(rack, Materials.Sphalerite, 0.0544, 2);
@@ -306,7 +310,8 @@ public class SieveDrops {
         addRecipe(end, Materials.Magnesite, 0.0192, 3);
         addRecipe(end, Materials.Olivine, 0.0192, 3);
         addRecipe(end, Materials.Glauconite, 0.064, 3);
-        addRecipe(end, Materials.Platinum, 0.0288, 3);
+        addRecipe(end, Materials.Chromite, 0.064, 3);
+        addRecipe(end, Materials.Cooperite, 0.0288, 3);
         addRecipe(end, Materials.Palladium, 0.0224, 3);
         addRecipe(end, Materials.Iridium, 0.0128, 3);
         addRecipe(end, Materials.Scheelite, 0.0384, 3);
