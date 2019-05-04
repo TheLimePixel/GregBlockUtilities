@@ -17,7 +17,7 @@ public class RecipeMapExtended<R extends RecipeBuilder<R>> extends RecipeMap {
     private ProgressWidget.MoveType moveType;
 
     public RecipeMapExtended(String unlocalizedName, int minInputs, int maxInputs, int minOutputs, int maxOutputs, int minFluidInputs, int maxFluidInputs, int minFluidOutputs, int maxFluidOutputs, int amperage, R defaultRecipe) {
-        super(unlocalizedName, minInputs, maxInputs, minOutputs, maxOutputs, minFluidInputs, maxFluidInputs, minFluidOutputs, maxFluidOutputs, amperage, defaultRecipe);
+        super(unlocalizedName, minInputs, maxInputs, minOutputs, maxOutputs, minFluidInputs, maxFluidInputs, minFluidOutputs, maxFluidOutputs, defaultRecipe);
     }
 
     public RecipeMap<R> setProgressBar(TextureArea progressBar, ProgressWidget.MoveType moveType) {
