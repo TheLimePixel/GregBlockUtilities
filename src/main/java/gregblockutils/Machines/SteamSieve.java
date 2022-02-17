@@ -42,7 +42,7 @@ public class SteamSieve extends SteamMetaTileEntity {
         ModularUI.Builder builder = ModularUI.builder(GuiTextures.BRONZE_BACKGROUND, 176, 216)
                 .widget(new LabelWidget(6, 6, getMetaFullName()))
                 .widget(new ImageWidget(79, 42, 18, 18, getFullGuiTexture("not_enough_steam_%s"))
-                        .setPredicate(() -> workableHandler.isHasNotEnoughEnergy()))
+                        .setPredicate(workableHandler::isHasNotEnoughEnergy))
                 .bindPlayerInventory(player.inventory, BRONZE_SLOT_BACKGROUND_TEXTURE, 8, 134)
                 .widget(new SlotWidget(this.importItems, 0, 35, 25)
                         .setBackgroundTexture(BRONZE_SLOT_BACKGROUND_TEXTURE))
